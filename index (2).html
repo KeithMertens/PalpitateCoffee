@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="description" content="Visit Palpitate Coffee Batangas on Gov. Antonio Carpio Road, Batangas City. Browse the menu, check the map and call ahead." />
+<meta name="theme-color" content="#58473a" />
+<meta name="color-scheme" content="dark" />
+<title>Palpitate Coffee Batangas | Coffee in Batangas City</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+<style>
+:root{color-scheme:light;--paper:#f6f0e8;--paper-deep:#eee3d5;--paper-dark:#d8c6b1;--ink:#35271f;--ink-soft:#59463a;--muted:#675448;--accent:#745339;--accent-dark:#5e402c;--white:#fffaf2;--gutter:clamp(1.1rem,3.2vw,2.5rem);--page-width:1040px;--serif:"Playfair Display",Georgia,serif;--sans:"DM Sans",Arial,sans-serif;--ease-out:cubic-bezier(0.23,1,0.32,1);--header-bg:var(--paper);--section-1:#eee4d8;--section-2:#f8f4ee;--button-ghost:#eee3d5}
+body[data-theme="dark"]{color-scheme:dark;--paper:#58473a;--paper-deep:#6a5747;--paper-dark:#8b735f;--ink:#fff3e1;--ink-soft:#f3dfc8;--muted:#e7cfb4;--accent:#f0c995;--accent-dark:#f5d9ae;--white:#38291e;--header-bg:#58473a;--section-1:#665343;--section-2:#514136;--button-ghost:#6a5747}
+body[data-theme="light"]{color-scheme:light;--paper:#f6f0e8;--paper-deep:#eee3d5;--paper-dark:#d8c6b1;--ink:#35271f;--ink-soft:#59463a;--muted:#675448;--accent:#745339;--accent-dark:#5e402c;--white:#fffaf2;--header-bg:var(--paper);--section-1:#eee4d8;--section-2:#f8f4ee;--button-ghost:#eee3d5}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:1rem;-webkit-tap-highlight-color:transparent;overscroll-behavior:none}
+body{min-width:320px;margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:1rem;line-height:1.6;padding:env(safe-area-inset-top,0) 0 env(safe-area-inset-bottom,0);transition:background-color 220ms ease,color 220ms ease}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{color:inherit;font:inherit}
+a,button,.button,.mb-tab,.menu-toggle,.mb-open,.mb-close{touch-action:manipulation;-webkit-user-select:none;user-select:none}
+a:focus-visible,button:focus-visible{outline:3px solid #8a6b45;outline-offset:4px}
+::selection{color:var(--white);background:var(--accent)}
+.page{width:100%;margin:0;overflow:hidden;background:var(--paper)}
+.container{width:calc(100% - 2*var(--gutter));margin-inline:auto}
+.site-header{position:relative;z-index:5;background:var(--header-bg)}
+.nav-wrap{display:flex;min-height:74px;align-items:center;justify-content:space-between;gap:1.5rem}
+.brand{display:inline-flex;flex:0 0 auto;align-items:center;gap:.65rem;font-family:var(--serif);font-size:clamp(1.05rem,2vw,1.35rem);font-weight:700;letter-spacing:-.04em}
+.brand-logo{width:42px;height:28px;object-fit:contain}
+body[data-theme="dark"] .brand-logo,body[data-theme="dark"] .footer-brand img{filter:brightness(0) invert(.94)}
+.site-nav{display:flex;align-items:center;justify-content:center;gap:clamp(.65rem,1.6vw,1.35rem);color:var(--ink-soft);font-size:.8rem}
+.site-nav a,.footer-nav a{text-underline-offset:.25em}
+.theme-toggle{display:inline-grid;width:44px;min-width:44px;height:44px;place-items:center;padding:0;border:0;background:transparent;color:var(--ink);cursor:pointer}
+.theme-toggle svg{width:21px;height:21px;fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.7}
+body[data-theme="dark"] .theme-toggle .icon-sun,body[data-theme="light"] .theme-toggle .icon-moon{display:block}
+body[data-theme="dark"] .theme-toggle .icon-moon,body[data-theme="light"] .theme-toggle .icon-sun{display:none}
+.button{display:inline-flex;min-height:44px;align-items:center;justify-content:center;padding:.65rem 1.25rem;border:0;background:var(--accent);color:var(--white);font-size:.84rem;font-weight:600;transition:background-color 160ms ease,transform 160ms ease;cursor:pointer}
+.menu-toggle{display:none;min-width:44px;min-height:44px;padding-inline:.8rem;border:1px solid var(--paper-dark);background:transparent;font-size:.8rem;font-weight:600;cursor:pointer}
+.mobile-menu{display:none;padding-bottom:1rem}
+.mobile-menu.open{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem}
+.mobile-menu a:not(.button){padding:.55rem 0;color:var(--ink-soft)}
+@media (hover:hover) and (pointer:fine){.button:hover,.site-nav a:hover,.footer-nav a:hover{transform:translateY(-1px)}.button:hover{background:var(--accent-dark)}.site-nav a:hover,.footer-nav a:hover{text-decoration:underline}.button-outline:hover{color:var(--white)}}
+.button:active,.theme-toggle:active,.carousel-controls button:active,.menu-toggle:active{transform:scale(.97)}
+.hero{display:grid;align-items:center;background:var(--section-2);color:var(--ink)}
+.hero .container{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);align-items:center;gap:clamp(2rem,6vw,5rem);padding-block:clamp(2.5rem,6vw,5rem)}
+.hero-photo{min-height:clamp(280px,40vw,470px);background-position:center;background-size:cover}
+body[data-theme="dark"] .hero-photo{background-image:url("assets/palpitate-dark.jpg")}
+body[data-theme="light"] .hero-photo{background-image:url("assets/palpitate-light.jpg")}
+.hero-copy{width:100%;padding-block:1rem}
+h1,h2,h3,h4,p{margin:0}
+h1,h2,h3{font-family:var(--serif);font-weight:500;letter-spacing:-.035em;line-height:1.12;text-wrap:balance}
+h1{max-width:15ch;font-size:clamp(2.8rem,5.6vw,4.4rem)}
+h2{font-size:clamp(1.8rem,3.5vw,2.5rem)}
+h3{font-size:clamp(1.45rem,2.4vw,1.8rem)}
+.hero-copy p{max-width:38ch;margin-top:.85rem;color:var(--ink-soft);font-size:1.05rem}
+.hero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:1rem;margin-top:1.45rem}
+.hero .button{background:var(--accent);color:var(--white)}
+.section{padding-block:clamp(2.5rem,5vw,4rem)}
+.section-title{display:flex;align-items:center;justify-content:center;gap:1rem;margin-bottom:1.8rem;text-align:center}
+.section-title h2{font-size:clamp(1.7rem,3vw,2.2rem)}
+.about-intro{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1fr);align-items:center;gap:clamp(1.25rem,3vw,2rem)}
+.about-photo,.location-photo{width:100%;height:100%;min-height:180px;object-fit:cover}
+.about-photo{aspect-ratio:1.5}
+.about-copy{padding:.4rem}
+.about-copy p,.location-copy p,.review-copy p{margin-top:.7rem;color:var(--ink-soft);font-size:.94rem}
+
+.location-section{background:var(--section-1)}
+.location-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:1rem}
+.location-photo{aspect-ratio:1.2;object-position:center}
+.map-frame,.map-frame iframe{width:100%;min-height:260px;height:100%;border:0}
+.location-copy{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:1.5rem;margin-top:1.4rem}
+.location-copy p+p{margin-top:.2rem}
+.plus-code{color:var(--muted);font-size:.9rem}
+.menu-preview{background:var(--section-1)}
+.menu-preview-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.menu-preview-card{overflow:hidden;background:var(--paper)}
+.menu-preview-card img{display:block;width:100%;height:auto}
+.menu-preview-card figcaption{padding:.9rem 0;color:var(--ink-soft);font-size:.9rem;font-weight:600}
+.product-section{overflow:hidden}
+.product-heading{display:flex;align-items:end;justify-content:space-between;gap:2rem;margin-bottom:1.4rem}
+.product-track{display:flex;gap:1rem;overflow-x:auto;padding-bottom:.75rem;scroll-snap-type:x mandatory;overscroll-behavior-inline:contain;scrollbar-color:var(--accent) var(--paper-dark);scrollbar-width:thin}
+.product-slide{flex:0 0 clamp(250px,32vw,390px);scroll-snap-align:start}
+.product-slide img{width:100%;aspect-ratio:1;object-fit:cover}
+.product-slide figcaption{padding-top:.75rem;color:var(--ink-soft);font-size:.95rem}
+.carousel-controls{display:flex;align-items:center;justify-content:flex-end;gap:.5rem;margin-top:.5rem}
+.carousel-controls[hidden]{display:none}
+.carousel-controls button{display:grid;width:44px;height:44px;place-items:center;border:0;background:transparent;color:var(--ink);cursor:pointer}
+.carousel-controls button svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.8}
+.carousel-controls button:disabled{color:var(--muted);opacity:.45;cursor:default}
+.carousel-position{min-width:3.5rem;color:var(--ink-soft);font-size:.84rem;text-align:center;font-variant-numeric:tabular-nums}
+.reviews-section{background:var(--paper)}
+.reviews-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(1.5rem,4vw,3rem)}
+.review-copy,.contact-copy{min-width:0}
+.rating-summary{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:1.25rem;margin-top:.8rem}
+.rating-score{font-family:var(--serif);font-size:3.3rem;line-height:1}
+.rating-detail{color:var(--muted);font-size:.86rem}
+.rating-bars{display:grid;gap:.42rem;margin-top:1rem}
+.rating-row{display:grid;grid-template-columns:4.2rem minmax(0,1fr) 2rem;align-items:center;gap:.6rem;color:var(--ink-soft);font-size:.8rem}
+.rating-track{height:8px;overflow:hidden;background:var(--paper-dark)}
+.rating-fill{height:100%;background:var(--accent)}
+.rating-row output{text-align:right;font-variant-numeric:tabular-nums}
+.review-link{display:inline-flex;margin-top:1.1rem;color:var(--accent-dark);font-size:.9rem;font-weight:600;text-decoration:underline;text-underline-offset:.2em}
+.contact-copy{padding-left:clamp(1rem,3vw,2rem);border-left:2px solid var(--paper-dark)}
+.contact-copy p{margin-top:.7rem;color:var(--ink-soft)}
+.contact-phone{display:inline-flex;margin-top:1rem;font-family:var(--serif);font-size:clamp(1.35rem,2.4vw,1.8rem);text-decoration:underline;text-underline-offset:.2em}
+.contact-actions{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.2rem}
+.button-outline{border:1px solid var(--accent);background:transparent;color:var(--accent-dark)}
+.site-footer{padding-block:1.3rem;background:var(--paper-deep)}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.footer-brand{display:inline-flex;align-items:center;gap:.6rem;color:var(--ink-soft);font-family:var(--serif);font-size:.95rem}
+.footer-brand img{width:34px;height:22px;object-fit:contain}
+.footer-nav{display:flex;flex-wrap:wrap;gap:.6rem 1.2rem;color:var(--ink-soft);font-size:.82rem}
+.reveal{opacity:1;transform:none}
+.js-ready .reveal:not(.visible){opacity:0;transform:translateY(14px)}
+.js-ready .reveal{transition:opacity 520ms ease-out var(--reveal-delay,0ms),transform 520ms ease-out var(--reveal-delay,0ms)}
+.js-ready .reveal.visible{opacity:1;transform:translateY(0)}
+
+@media (max-width:760px){
+.nav-wrap{min-height:66px;gap:.55rem}
+.theme-toggle,.menu-toggle{flex:0 0 auto}
+.theme-toggle{padding-inline:.5rem}
+.brand{font-size:1rem}
+.site-nav,.nav-wrap>.button{display:none}
+.menu-toggle{display:inline-grid;place-items:center}
+.hero .container{grid-template-columns:1fr;gap:1.5rem;padding-block:2rem}
+.hero-photo{min-height:clamp(220px,58vw,360px)}
+.hero-copy{width:100%;padding-block:.5rem}
+.product-heading{align-items:flex-start;flex-direction:column;gap:.6rem}
+.product-slide{flex-basis:min(78vw,320px)}
+.about-intro,.location-grid,.reviews-grid{grid-template-columns:1fr}
+.about-photo{aspect-ratio:1.65}.location-grid{gap:.8rem}
+.location-photo,.map-frame,.map-frame iframe{min-height:230px}
+.location-copy{grid-template-columns:1fr;align-items:start;gap:1rem}
+.contact-copy{padding-top:1.6rem;padding-left:0;border-top:2px solid var(--paper-dark);border-left:0}}
+@media (max-width:480px){
+:root{--gutter:1rem}
+.brand-location{display:none}
+.hero .container{padding-block:1.5rem}
+.hero-photo{min-height:220px}
+.hero-copy{padding-block:.25rem}
+h1{max-width:15ch;font-size:clamp(2.5rem,10vw,3.2rem)}
+.menu-preview-grid{grid-template-columns:1fr}
+.section{padding-block:2.35rem}.section-title{gap:.6rem;margin-bottom:1.3rem}
+.about-copy{padding:0}.rating-summary{gap:.9rem}
+.footer-inner{align-items:flex-start;flex-direction:column}}
+@media (prefers-reduced-motion:reduce){
+html{scroll-behavior:auto}
+*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}
+.js-ready .reveal:not(.visible){opacity:1;transform:none}
+}
+</style>
+</head>
+<body data-theme="dark">
+<main class="page" id="top">
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="#top" aria-label="Palpitate Coffee Batangas home"><img class="brand-logo" src="assets/palpitate-logo.png" alt="" /><span>Palpitate<span class="brand-location"> Coffee Batangas</span></span></a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="#top">Home</a><a href="#about">About Us</a><a href="#menu">Cafe Menu</a><a href="#location">Store Location</a><a href="#reviews">Customer Reviews</a>
+      </nav>
+      <button class="theme-toggle" type="button" aria-label="Switch to light mode" aria-pressed="true" data-theme-toggle>
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4" /><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42" /></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.1A8.5 8.5 0 0 1 9.9 3.5 8.5 8.5 0 1 0 20.5 14.1Z" /></svg>
+      </button>
+      <a class="button" href="tel:+639985455132">Call Us</a>
+      <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-menu">Menu</button>
+    </div>
+    <nav class="mobile-menu container" id="mobile-menu" aria-label="Mobile navigation">
+      <a href="#about">About Us</a><a href="#menu">Cafe Menu</a><a href="#location">Store Location</a><a href="#reviews">Customer Reviews</a>
+      <a class="button" href="tel:+639985455132">Call the cafe</a>
+    </nav>
+  </header>
+
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="container">
+      <div class="hero-copy">
+        <h1 class="reveal" id="hero-title">Warm brews,<br />cozy spaces</h1>
+        <p class="reveal">Find Palpitate Coffee Batangas in Pallocan East, Batangas City.</p>
+        <div class="hero-actions reveal">
+          <a class="button" href="https://www.google.com/maps/search/?api=1&amp;query=Palpitate+Coffee+Batangas" target="_blank" rel="noopener noreferrer">Get Directions</a>
+          <a href="#menu">Explore cafe favorites</a>
+        </div>
+      </div>
+      <div class="hero-photo reveal" role="img" aria-label="Palpitate Coffee Batangas storefront at night"></div>
+    </div>
+  </section>
+
+  <section class="section menu-preview" id="menu" aria-labelledby="menu-preview-title">
+    <div class="container">
+      <div class="section-title reveal"><h2 class="reveal" id="menu-preview-title">Menu at a glance</h2></div>
+      <div class="menu-preview-grid reveal">
+        <figure class="menu-preview-card">
+          <img src="assets/menu-drinks.jpg" alt="Palpitate coffee menu board featuring espresso drinks and prices" loading="lazy" />
+          <figcaption>House coffee &amp; signature drinks</figcaption>
+        </figure>
+        <figure class="menu-preview-card">
+          <img src="assets/menu-food.jpg" alt="Palpitate food menu board featuring breakfast, appetizers and mains" loading="lazy" />
+          <figcaption>Breakfast, plates &amp; favorites</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section product-section" id="drinks" aria-labelledby="drinks-title">
+    <div class="container">
+      <div class="product-heading reveal">
+        <h2 id="drinks-title">Palpitate matcha</h2>
+      </div>
+      <div class="product-carousel reveal">
+        <div class="product-track" id="product-track" role="region" aria-label="Palpitate matcha drinks" tabindex="0">
+          <figure class="product-slide">
+            <img src="assets/matcha-watermelon.png" alt="Iced matcha with a red fruit layer and cream" loading="lazy" />
+            <figcaption>Matcha with fruit and cream</figcaption>
+          </figure>
+          <figure class="product-slide">
+            <img src="assets/matcha-iced.png" alt="Iced matcha latte with green tea and milk layers" loading="lazy" />
+            <figcaption>Iced matcha latte</figcaption>
+          </figure>
+          <figure class="product-slide">
+            <img src="assets/matcha-tea.png" alt="Iced matcha latte set against tea leaves" loading="lazy" />
+            <figcaption>Layered matcha</figcaption>
+          </figure>
+          <figure class="product-slide">
+            <img src="assets/matcha-cream.png" alt="Iced matcha topped with a layer of cream" loading="lazy" />
+            <figcaption>Cream-topped matcha</figcaption>
+          </figure>
+        </div>
+        <div class="carousel-controls" id="carousel-controls" hidden>
+          <button type="button" id="carousel-prev" aria-label="Previous drinks">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6" /></svg>
+          </button>
+          <span class="carousel-position" id="carousel-position" aria-live="polite"></span>
+          <button type="button" id="carousel-next" aria-label="Next drinks">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="about" aria-labelledby="about-title">
+    <div class="container">
+      <div class="section-title reveal"><h2 class="reveal" id="about-title">About Us</h2></div>
+      <div class="about-intro">
+        <img class="about-photo reveal" src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&amp;fit=crop&amp;w=1000&amp;q=85" alt="Coffee being poured at a cafe table" loading="lazy" />
+        <div class="about-copy reveal">
+          <h3 class="reveal">Your neighborhood cafe</h3>
+          <p class="reveal">Palpitate Coffee Batangas is a cozy coffee shop on Gov. Antonio Carpio Road in Pallocan East, Batangas City. Stop in for a coffee break, and check with the cafe for today's menu and hours.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section location-section" id="location" aria-labelledby="location-title">
+    <div class="container">
+      <div class="section-title reveal"><h2 class="reveal" id="location-title">Store Location</h2></div>
+      <div class="location-grid">
+        <img class="location-photo reveal" src="assets/palpitate-cup.png" alt="Hands holding a Palpitate takeaway coffee" loading="lazy" />
+        <div class="map-frame reveal">
+          <iframe title="Map to Palpitate Coffee Batangas in Batangas City" src="https://www.google.com/maps?q=13.7564519,121.0865949&amp;z=16&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="location-copy reveal">
+        <div>
+          <h3>Palpitate Coffee Batangas</h3>
+          <p>Gov. Antonio Carpio Road, Pallocan East</p>
+          <p>Batangas City, Batangas</p>
+        </div>
+        <a class="button" href="https://www.google.com/maps/search/?api=1&amp;query=Palpitate+Coffee+Batangas" target="_blank" rel="noopener noreferrer">Open in Google Maps</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reviews-section" id="reviews" aria-labelledby="reviews-title">
+    <div class="container">
+      <div class="section-title reveal"><h2 class="reveal" id="reviews-title">Customer Reviews</h2></div>
+      <div class="reviews-grid">
+        <div class="review-copy reveal">
+          <h3>See what customers say</h3>
+          <p>Read recent reviews, browse photos and check today's hours on Google Maps.</p>
+          <a class="review-link" href="https://www.google.com/maps/search/?api=1&amp;query=Palpitate+Coffee+Batangas" target="_blank" rel="noopener noreferrer">Read reviews on Google</a>
+        </div>
+        <div class="contact-copy reveal" id="contact">
+          <h3>Contact Us</h3>
+          <p>Questions about today's menu, opening hours, or finding the cafe? Give the team a call or send an email.</p>
+          <a class="contact-phone" href="tel:+639985455132">+63 998 545 5132</a>
+          <p><a class="review-link" style="margin-top:0" href="mailto:palpitatecoffee.batangas@gmail.com">palpitatecoffee.batangas@gmail.com</a></p>
+          <div class="contact-actions">
+            <a class="button" href="tel:+639985455132">Call the cafe</a>
+            <a class="button button-outline" href="https://www.google.com/maps/search/?api=1&amp;query=Palpitate+Coffee+Batangas" target="_blank" rel="noopener noreferrer">Get directions</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="footer-brand" href="#top"><img src="assets/palpitate-logo.png" alt="" />Palpitate Coffee Batangas</a>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="#about">About</a><a href="#menu">Cafe favorites</a><a href="#location">Location</a><a href="#reviews">Reviews</a><a href="tel:+639985455132">Call</a>
+      </nav>
+    </div>
+  </footer>
+</main>
+
+<script>
+const menuToggle = document.querySelector(".menu-toggle");
+const mobileMenu = document.getElementById("mobile-menu");
+const themeToggle = document.querySelector("[data-theme-toggle]");
+const themeColor = document.querySelector('meta[name="theme-color"]');
+const colorScheme = document.querySelector('meta[name="color-scheme"]');
+
+const setTheme = (theme) => {
+  const value = theme === "light" ? "light" : "dark";
+  document.body.dataset.theme = value;
+  themeColor.setAttribute("content", value === "dark" ? "#58473a" : "#f6f0e8");
+  colorScheme.setAttribute("content", value);
+  if (themeToggle) {
+    themeToggle.setAttribute("aria-label", value === "dark" ? "Switch to light mode" : "Switch to dark mode");
+    themeToggle.setAttribute("aria-pressed", String(value === "dark"));
+  }
+  try { localStorage.setItem("palpitate-theme", value); } catch (error) {}
+};
+
+const preferredTheme = (localStorage.getItem("palpitate-theme") || "dark");
+setTheme(preferredTheme);
+
+menuToggle.addEventListener("click", () => {
+  const isOpen = mobileMenu.classList.toggle("open");
+  menuToggle.setAttribute("aria-expanded", String(isOpen));
+  menuToggle.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
+});
+mobileMenu.querySelectorAll("a").forEach((link) => {
+  link.addEventListener("click", () => {
+    mobileMenu.classList.remove("open");
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.setAttribute("aria-label", "Open navigation");
+  });
+});
+if (themeToggle) {
+  themeToggle.addEventListener("click", () => {
+    setTheme(document.body.dataset.theme === "dark" ? "light" : "dark");
+  });
+}
+
+if ("IntersectionObserver" in window) {
+  document.querySelectorAll("section").forEach((section) => {
+    section.querySelectorAll(".reveal").forEach((item, index) => {
+      item.style.setProperty("--reveal-delay", `${Math.min(index, 4) * 65}ms`);
+    });
+  });
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) { entry.target.classList.add("visible"); observer.unobserve(entry.target); }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll(".reveal").forEach((item) => observer.observe(item));
+  document.documentElement.classList.add("js-ready");
+}
+
+const track = document.getElementById("product-track");
+if (track) {
+  const slides = [...track.querySelectorAll(".product-slide")];
+  const controls = document.getElementById("carousel-controls");
+  const previous = document.getElementById("carousel-prev");
+  const next = document.getElementById("carousel-next");
+  const position = document.getElementById("carousel-position");
+
+  if (slides.length && controls && previous && next && position) {
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const step = () => slides[0].getBoundingClientRect().width + parseFloat(getComputedStyle(track).columnGap || 0);
+    let wheelDirection = 0;
+    let wheelTimeout;
+
+    function updateCarousel() {
+      const offsets = slides.map((slide) => slide.offsetLeft - slides[0].offsetLeft);
+      const active = offsets.reduce((best, offset, index) =>
+        Math.abs(offset - track.scrollLeft) < Math.abs(offsets[best] - track.scrollLeft) ? index : best, 0);
+      previous.disabled = track.scrollLeft <= 1;
+      next.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 1;
+      position.textContent = String(active + 1) + " / " + slides.length;
+    }
+
+    previous.addEventListener("click", () => track.scrollBy({ left: -step(), behavior: reducedMotion.matches ? "auto" : "smooth" }));
+    next.addEventListener("click", () => track.scrollBy({ left: step(), behavior: reducedMotion.matches ? "auto" : "smooth" }));
+    track.addEventListener("wheel", (event) => {
+      if (!event.deltaY || Math.abs(event.deltaY) < Math.abs(event.deltaX)) return;
+      const offsets = slides.map((slide) => slide.offsetLeft - slides[0].offsetLeft);
+      const active = offsets.reduce((best, offset, index) =>
+        Math.abs(offset - track.scrollLeft) < Math.abs(offsets[best] - track.scrollLeft) ? index : best, 0);
+      const direction = Math.sign(event.deltaY);
+      const target = active + direction;
+      if (target < 0 || target >= slides.length) return;
+      event.preventDefault();
+      if (wheelDirection === direction) return;
+      window.clearTimeout(wheelTimeout);
+      wheelDirection = direction;
+      track.scrollTo({ left: offsets[target], behavior: reducedMotion.matches ? "auto" : "smooth" });
+      wheelTimeout = window.setTimeout(() => { wheelDirection = 0; }, 300);
+    }, { passive: false });
+    track.addEventListener("scroll", updateCarousel, { passive: true });
+    window.addEventListener("resize", updateCarousel);
+    controls.hidden = false;
+    updateCarousel();
+  }
+}
+</script>
+</body>
+</html>
